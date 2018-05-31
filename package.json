@@ -1,0 +1,39 @@
+{
+  "name": "remoteServerBot",
+  "version": "1.0.0",
+  "description": "a telegram bot commanding remote server",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "start:dev": "cross-env NODE_ENV=development node src/app.js",
+    "start:prod": "cross-env NODE_ENV=production node src/app.js",
+    "clean": "rimraf package-lock.json ./node_modules/ ./lib/*",
+    "clean:compile": "rimraf ./lib/*",
+    "deploy": "now --name prod -e NODE_ENV=production --public",
+    "deploy:clean": "now rm prod -y",
+    "deploy:dev": "now --name dev --public",
+    "redeploy:dev": "now rm dev -y && now --name dev --public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OfryL/remoteServerBot.git"
+  },
+  "author": "Ofry Linkovsky",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/OfryL/remoteServerBot/issues"
+  },
+  "homepage": "https://github.com/OfryL/remoteServerBot#readme",
+  "dependencies": {
+    "config": "1.30.0",
+    "log4js": "2.5.3",
+    "moment": "2.22.1",
+    "pageres": "4.5.1",
+    "telegraf": "3.20.0",
+  },
+  "devDependencies": {
+    "cross-env": "latest",
+    "now": "^11.1.7",
+    "rimraf": "latest"
+  }
+}

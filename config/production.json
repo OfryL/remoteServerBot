@@ -1,0 +1,12 @@
+{
+  "logger": {
+    "appenders": ["appLogs"],
+    "level": {
+      "default": "info",
+      "fastify": "warn"
+    },
+  },
+  "telegramBot": {
+    "token": "",
+  }
+}
